@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SemanaJuridica.Views.CadastroRealizado"
+             Title="Comprovante de Inscrição"
+             BackgroundColor="#F9F9FB">
+
+    <VerticalStackLayout 
+        Padding="15" 
+        Spacing="12" 
+        VerticalOptions="FillAndExpand">
+        
+
+        <Frame 
+            BackgroundColor="White" 
+            CornerRadius="10" 
+            Padding="15" 
+            BorderColor="#E0E0E0" 
+            HasShadow="True">
+            
+            <VerticalStackLayout 
+                Spacing="8">
+                
+                <Label 
+                    Text="🏛️" 
+                    FontSize="40" 
+                    HorizontalOptions="Center" 
+                    Margin="0,0,0,2"/>
+                
+                <Label 
+                    Text="Inscrição Confirmada!" 
+                    TextColor="#2E7D32" 
+                    FontSize="20" 
+                    FontAttributes="Bold" 
+                    HorizontalOptions="Center"/>
+                
+
+                <BoxView 
+                    HeightRequest="1" 
+                    BackgroundColor="#E0E0E0" 
+                    Margin="0,3"/>
+                
+
+                <Label 
+                    Text="{Binding NomeEvento}" 
+                    FontSize="18" 
+                    FontAttributes="Bold" 
+                    TextColor="#8B0000" 
+                    HorizontalTextAlignment="Center"/>
+                
+                <Label 
+                    Text="{Binding TipoInscricao}" 
+                    FontSize="14" 
+                    TextColor="#555555" 
+                    HorizontalTextAlignment="Center"/>
+                
+
+                <BoxView 
+                    HeightRequest="1" 
+                    BackgroundColor="#E0E0E0" 
+                    Margin="0,3"/>
+                
+
+                <Grid 
+                    RowDefinitions="Auto, Auto, Auto" 
+                    ColumnDefinitions="*, *" 
+                    RowSpacing="8">
+                    
+                    <Label 
+                        Grid.Row="0" 
+                        Grid.Column="0" 
+                        Text="Data de Início:" 
+                        TextColor="#777777" 
+                        FontSize="13"/>
+                    
+                    <Label 
+                        Grid.Row="0" 
+                        Grid.Column="1" 
+                        Text="{Binding DataInicio, StringFormat='{}{0:dd/MM/yyyy}'}" 
+                        FontAttributes="Bold" 
+                        TextColor="#333333" 
+                        FontSize="13"/>
+                    
+
+                    <Label 
+                        Grid.Row="1" 
+                        Grid.Column="0" 
+                        Text="Data de Término:" 
+                        TextColor="#777777" 
+                        FontSize="13"/>
+                    
+                    <Label 
+                        Grid.Row="1" 
+                        Grid.Column="1" 
+                        Text="{Binding DataTermino, StringFormat='{}{0:dd/MM/yyyy}'}" 
+                        FontAttributes="Bold" 
+                        TextColor="#333333" 
+                        FontSize="13"/>
+
+                    <Label 
+                        Grid.Row="2" 
+                        Grid.Column="0" 
+                        Text="Local:" 
+                        TextColor="#777777" 
+                        FontSize="13"/>
+                    
+                    <Label 
+                        Grid.Row="2" 
+                        Grid.Column="1" 
+                        Text="{Binding LocalEvento}" 
+                        FontAttributes="Bold" 
+                        TextColor="#333333" 
+                        FontSize="12"/>
+                    
+                </Grid>
+            </VerticalStackLayout>
+        </Frame>
+
+        <Frame 
+            BackgroundColor="#8B0000" 
+            CornerRadius="10" 
+            Padding="15" 
+            HasShadow="True">
+            
+            <Grid 
+                RowDefinitions="Auto, Auto" 
+                ColumnDefinitions="*, *" 
+                RowSpacing="10">
+
+                <VerticalStackLayout 
+                    Grid.Row="0" 
+                    Grid.Column="0" 
+                    HorizontalOptions="Center">
+                    
+                    <Label 
+                        Text="Duração" 
+                        TextColor="#EAEAEA" 
+                        FontSize="12" 
+                        HorizontalOptions="Center"/>
+                    
+                    <Label 
+                        Text="{Binding DuracaoDias, StringFormat='{}{0} Dias'}" 
+                        TextColor="White" 
+                        FontSize="18" 
+                        FontAttributes="Bold" 
+                        HorizontalOptions="Center"/>
+                    
+                </VerticalStackLayout>
+
+                <VerticalStackLayout 
+                    Grid.Row="0" 
+                    Grid.Column="1" 
+                    HorizontalOptions="Center">
+                    
+                    <Label 
+                        Text="Participantes" 
+                        TextColor="#EAEAEA" 
+                        FontSize="12" 
+                        HorizontalOptions="Center"/>
+                    
+                    <Label 
+                        Text="{Binding NumeroParticipantes, StringFormat='{}{0} Ingressos'}" 
+                        TextColor="White" 
+                        FontSize="18" 
+                        FontAttributes="Bold" 
+                        HorizontalOptions="Center"/>
+                    
+                </VerticalStackLayout>
+
+                <VerticalStackLayout 
+                    Grid.Row="1" 
+                    Grid.ColumnSpan="2" 
+                    HorizontalOptions="Center">
+                    
+                    <Label 
+                        Text="VALOR TOTAL A PAGAR" 
+                        TextColor="#FFD700" 
+                        FontSize="11" 
+                        FontAttributes="Bold" 
+                        HorizontalOptions="Center"/>
+                    
+                    <Label 
+                        Text="{Binding CustoTotal, StringFormat='{}{0:C}'}" 
+                        TextColor="White" 
+                        FontSize="24" 
+                        FontAttributes="Bold" 
+                        HorizontalOptions="Center"/>
+                    
+                </VerticalStackLayout>
+            </Grid>
+        </Frame>
+
+        <Button Text="Voltar ao Início" 
+                Clicked="Voltar_Clicked" 
+                BackgroundColor="#333333" 
+                TextColor="White" 
+                FontAttributes="Bold" 
+                CornerRadius="5" 
+                HeightRequest="45" 
+                Margin="0,5,0,0"/>
+
+    </VerticalStackLayout>
+</ContentPage>

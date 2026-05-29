@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SemanaJuridica.Views.CadastroEvento"
+             Title="Inscrição Oficial"
+             BackgroundColor="#F9F9FB">
+
+    <VerticalStackLayout 
+        Padding="15" 
+        Spacing="10" 
+        VerticalOptions="FillAndExpand">
+
+        <Frame 
+            BackgroundColor="#8B0000" 
+            CornerRadius="8" 
+            Padding="10" 
+            HasShadow="True">
+            
+            <VerticalStackLayout 
+                HorizontalOptions="Center" 
+                Spacing="2">
+                
+                <Label Text="⚖️ I SEMANA JURÍDICA" 
+                       TextColor="White" 
+                       FontSize="22" 
+                       FontAttributes="Bold" 
+                       HorizontalOptions="Center"/>
+                
+              
+                
+            </VerticalStackLayout>
+        </Frame>
+
+        <Label 
+            Text="Nome do Participante:" 
+            FontAttributes="Bold" 
+            TextColor="#333333" 
+            FontSize="14"/>
+        
+        <Entry 
+            x:Name="txt_nome" 
+            Placeholder="Ex: Dr. Nome Sobrenome"
+            BackgroundColor="White" 
+            HeightRequest="40"/>
+
+        <Label 
+            Text="Tipo de Entrada:" 
+            FontAttributes="Bold" 
+            TextColor="#333333"
+            FontSize="14"/>
+        
+        <Picker 
+            x:Name="pck_tipo" 
+            Title="Selecione o pacote"
+            BackgroundColor="White" 
+            HeightRequest="40">
+            
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Palestras (R$ 150,00/dia)</x:String>
+                    <x:String>Cursos (R$ 200,00/dia)</x:String>
+                    <x:String>Palestras + Cursos (R$ 300,00/dia)</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Grid 
+            ColumnDefinitions="*, *" 
+            RowDefinitions="Auto, Auto" 
+            ColumnSpacing="10" 
+            RowSpacing="2">
+            
+            <Label 
+                Grid.Row="0" 
+                Grid.Column="0" 
+                Text="Data de Início:" 
+                FontAttributes="Bold" 
+                TextColor="#333333" 
+                FontSize="14"/>
+            
+            <DatePicker 
+                Grid.Row="1" 
+                Grid.Column="0" 
+                x:Name="dtpck_inicio" 
+                DateSelected="dtpck_inicio_DateSelected" 
+                BackgroundColor="White" 
+                HeightRequest="40"/>
+
+            <Label 
+                Grid.Row="0" 
+                Grid.Column="1" 
+                Text="Data de Término:" 
+                FontAttributes="Bold" 
+                TextColor="#333333" 
+                FontSize="14"/>
+            
+            <DatePicker 
+                Grid.Row="1" 
+                Grid.Column="1" 
+                x:Name="dtpck_termino" 
+                BackgroundColor="White" 
+                HeightRequest="40"/>
+            
+        </Grid>
+
+        <Grid 
+            ColumnDefinitions="*, *" 
+            ColumnSpacing="10" 
+            VerticalOptions="Center">
+            
+            <VerticalStackLayout 
+                Grid.Column="0" 
+                Spacing="2">
+                
+                <Label 
+                    Text="Quantidade:" 
+                    FontAttributes="Bold" 
+                    TextColor="#333333" 
+                    FontSize="14"/>
+                
+                <HorizontalStackLayout 
+                    Spacing="8" 
+                    VerticalOptions="Center">
+                    
+                    <Stepper 
+                        x:Name="stp_participantes" 
+                        Minimum="1" 
+                        Maximum="50" 
+                        Value="1" 
+                        Scale="0.9"/>
+                    
+                    <Label 
+                        Text="{Binding Source={x:Reference stp_participantes}, Path=Value, StringFormat='{0:F0}'}" 
+                           FontSize="16" 
+                        VerticalOptions="Center" 
+                        FontAttributes="Bold" 
+                        TextColor="#8B0000"/>
+                    
+                </HorizontalStackLayout>
+                
+            </VerticalStackLayout>
+
+            <VerticalStackLayout 
+                Grid.Column="1" 
+                Spacing="2">
+                
+                <Label 
+                    Text="Local do Evento:" 
+                    FontAttributes="Bold" 
+                    TextColor="#333333" 
+                    FontSize="14"/>
+                
+                <Entry 
+                    x:Name="txt_local" 
+                    Text="Centro de Convenções" 
+                    IsReadOnly="True" 
+                    BackgroundColor="#EAEAEA" 
+                    HeightRequest="40" 
+                    FontSize="13"/>
+                
+            </VerticalStackLayout>
+        </Grid>
+
+        <Button Text="Concluir Inscrição" 
+                Clicked="Concluir_Clicked" 
+                BackgroundColor="#8B0000" 
+                TextColor="White" 
+                FontAttributes="Bold" 
+                CornerRadius="5" 
+                HeightRequest="45" 
+                Margin="0,10,0,0"/>
+
+        <Button Text="Sobre o Evento" 
+                Clicked="Sobre_Clicked" 
+                BackgroundColor="Transparent" 
+                TextColor="#8B0000" 
+                BorderColor="#8B0000" 
+                BorderWidth="1"
+                FontAttributes="Bold" 
+                CornerRadius="5" 
+                HeightRequest="40"/>
+
+    </VerticalStackLayout>
+</ContentPage>

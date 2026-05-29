@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SemanaJuridica.Views.SobreEvento"
+             Title="Sobre o Evento"
+             BackgroundColor="#FFF">
+
+    <VerticalStackLayout Padding="25" Spacing="20" VerticalOptions="Center">
+        <Label Text="⚖️" 
+               FontSize="70" 
+               HorizontalOptions="Center"/>
+        <Label Text="Apresentação Acadêmica" 
+               FontSize="22" 
+               FontAttributes="Bold" 
+               TextColor="#8B0000" 
+               HorizontalOptions="Center"/>
+
+        <Label Text="A I Semana Jurídica de São Paulo reúne renomados doutrinadores, juízes e advogados para discutir as fronteiras tecnológicas do direito, novos marcos regulatórios e a prática jurídica contemporânea."
+               TextColor="#555555"
+               FontSize="16"
+               HorizontalTextAlignment="Center"
+               LineHeight="1.4"/>
+
+        <Label Text="Certificação de 40 horas complementares emitida após o encerramento oficial."
+               TextColor="#8B0000"
+               FontAttributes="Italic"
+               FontSize="14"
+               HorizontalTextAlignment="Center"/>
+
+        <Button Text="Fechar" 
+                Clicked="Fechar_Clicked" 
+                BackgroundColor="#8B0000" 
+                TextColor="White"
+                CornerRadius="5" 
+                WidthRequest="150" 
+                Margin="0,20,0,0"/>
+    </VerticalStackLayout>
+</ContentPage>
