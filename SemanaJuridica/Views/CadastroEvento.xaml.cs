@@ -48,7 +48,7 @@ namespace SemanaJuridica.Views
                     DataInicio = dtpck_inicio.Date.Value,
                     DataTermino = dtpck_termino.Date.Value,
                     NumeroParticipantes = Convert.ToInt32(stp_participantes.Value),
-                    LocalEvento = txt_local.Text
+                    
                 };
 
                

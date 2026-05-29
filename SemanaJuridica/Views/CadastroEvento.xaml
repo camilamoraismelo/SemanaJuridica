@@ -140,25 +140,7 @@
                 
             </VerticalStackLayout>
 
-            <VerticalStackLayout 
-                Grid.Column="1" 
-                Spacing="2">
-                
-                <Label 
-                    Text="Local do Evento:" 
-                    FontAttributes="Bold" 
-                    TextColor="#333333" 
-                    FontSize="14"/>
-                
-                <Entry 
-                    x:Name="txt_local" 
-                    Text="Centro de Convenções" 
-                    IsReadOnly="True" 
-                    BackgroundColor="#EAEAEA" 
-                    HeightRequest="40" 
-                    FontSize="13"/>
-                
-            </VerticalStackLayout>
+          
         </Grid>
 
         <Button Text="Concluir Inscrição" 

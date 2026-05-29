@@ -5,10 +5,15 @@
              Title="Sobre o Evento"
              BackgroundColor="#FFF">
 
-    <VerticalStackLayout Padding="25" Spacing="20" VerticalOptions="Center">
+    <VerticalStackLayout 
+        Padding="25" 
+        Spacing="20" 
+        VerticalOptions="Center">
+        
         <Label Text="⚖️" 
                FontSize="70" 
                HorizontalOptions="Center"/>
+        
         <Label Text="Apresentação Acadêmica" 
                FontSize="22" 
                FontAttributes="Bold" 

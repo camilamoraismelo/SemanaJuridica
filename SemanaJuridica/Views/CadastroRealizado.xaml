@@ -97,12 +97,7 @@
                         TextColor="#333333" 
                         FontSize="13"/>
 
-                    <Label 
-                        Grid.Row="2" 
-                        Grid.Column="0" 
-                        Text="Local:" 
-                        TextColor="#777777" 
-                        FontSize="13"/>
+                  
                     
                     <Label 
                         Grid.Row="2" 
